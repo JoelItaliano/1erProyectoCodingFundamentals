@@ -10,14 +10,18 @@ nombreUsuario (player1);
  
 console.log(player1.username + ' Seleccione la clase que representa:');
 selecPersonaje(player1);
+console.log("")
 console.log('%cBienvenido '+player1.username+' Su tipo de pj es: '+player1.clase.nombre+'\n','color:red');
 
 console.log('%cSegundo jugador: ','color:blue');
 nombreUsuario(player2);
 console.log(player2.username + ' Seleccione la clase que representa:');
 selecPersonaje(player2);
+console.log("")
 console.log('%cBienvenido '+player2.username+' Su tipo de pj es: '+player2.clase.nombre+'\n','color:blue');
 
+console.log("%cCOMENZANDO LA BATALLA " + player1.clase.nombre + ' VS ' + player2.clase.nombre,"color: gold")
+alert('')
 
 fight(player1,player2)
 
