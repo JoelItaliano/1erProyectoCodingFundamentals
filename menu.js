@@ -1,4 +1,8 @@
 
+/**
+ * funcion para registrar el nombre de usuario
+ * @param {*} player parametro que representa al usuario y asigna el nombre
+ */
 export function nombreUsuario(player){    
 salir:
 do{
