@@ -28,12 +28,18 @@ export function fight(player1,player2){
         
         //el daño realizado se resta de la vida del defensor
         vidaJugador2 -= ataque1;
-        console.log('%c'+player1.username+': Dano realizado: ' + ataque1,'color:red');
-        console.log('%cVida ' + player2.username + ': '+ vidaJugador2 + '\n','color: yellow');
         
+        if (ataque1 < 0){
+            console.log('%cDEFENSA EXEPCIONAL: DEFENSOR SE CURA '+Math.abs(ataque1)+' DE VIDA','color:lime')
+            console.log('%cVida ' + player2.username + ': '+ vidaJugador2 + '\n','color: yellow');
+        }else{
+            console.log('%c'+player1.username+': Dano realizado: ' + ataque1,'color:red');
+            console.log('%cVida ' + player2.username + ': '+ vidaJugador2 + '\n','color: yellow');
+        }
         //si la vida del jugador 2 llega a 0 se declara un ganador y termina la batalla
         if (vidaJugador2 <= 0){
-            console.log('%cGanador: ' + player1.username +', clase: '+ player1.clase.nombre,'color:aqua');
+            console.log('%cResultados final: '+ player1.username + ' vida restante: ' + vidaJugador1 + ', '+player2.username + ' vida restante: ' + 0,'color:green' )
+            console.log('%cGanador: ' + player1.username +', clase: '+ player1.clase.nombre,'color:aqua');            
             break finBatalla;
         }
 
@@ -45,11 +51,17 @@ export function fight(player1,player2){
         let ataque2 = (Math.round(Math.random() * ataqueJugador2)) - (Math.round(Math.random() * defensaJugador1));
 
         vidaJugador1 -= ataque2;
-
+        
+        if (ataque2 < 0){
+            console.log('%cDEFENSA EXEPCIONAL: DEFENSOR SE CURA '+Math.abs(ataque2)+' DE VIDA','color:lime')
+            console.log('%cVida ' + player1.username + ': '+ vidaJugador1 + '\n','color: yellow');
+        }else{        
         console.log('%c'+player2.username+': Dano realizado: ' + ataque2,'color:blue');
         console.log('%cVida ' + player1.username + ': '+vidaJugador1 +'\n','color:yellow');
+        }
 
         if (vidaJugador1 <= 0){
+            console.log('%cResultados final: '+ player2.username + ' vida restante: ' + vidaJugador2 + ', '+player1.username + ' vida restante: ' + 0,'color:green' )
             console.log('%cGanador: '+ player2.username +', clase: '+ player2.clase.nombre,'color:aqua');
             break finBatalla;
         }    

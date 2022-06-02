@@ -12,7 +12,10 @@ const ENANO = {nombre: 'Enano', vida: 80, ataque: 20, defensa: 15};
 export function selecPersonaje(personaje){
 exit:
 do{
-    console.log('%cSeleccione Personaje con A; B o C:\nA: Orco\nB: Humano\nC: Enano','color:yellow');
+    console.log('%cSELECCIONES PERSONAJE CON A; B o C:','color:yellow');
+    console.log('%cA: Orco '+'(Vida: '+ORCO.vida+', Ataque: '+ORCO.ataque+', Defensa: '+ORCO.defensa+')','color:lime');
+    console.log('%cB: Humano '+'(Vida: '+HUMANO.vida+', Ataque: '+HUMANO.ataque+', Defensa: '+HUMANO.defensa+')','color:lime');
+    console.log('%cC: Enano '+'(Vida: '+ENANO.vida+', Ataque: '+ENANO.ataque+', Defensa: '+ENANO.defensa+')','color:lime');
     let clasePj = prompt('');    
     switch(clasePj){
         case 'a':
